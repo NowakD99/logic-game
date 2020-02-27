@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+.field.empty {
+    .circle-red,.circle-blue {
+        display: none;
+    }
+}
+.field.red.not-empty{
+    .circle-red {
+        display: block;
+    }
+    .circle-blue {
+        display: none;
+    }
+}
+.field.blue.not-empty{
+    .circle-blue {
+        display: block;
+    }
+    .circle-red {
+        display: none;
+    }
+}
+
+.circle-red {
+    background-color: red;
+}
+.circle-blue {
+    background-color: blue;
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    transform: skew(40deg, 0deg) translate(14px, -6px);
+}
+.circle-without-skew {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    transform: skew(0deg, 0deg);
+}
+.stats {
+    div {
+        display: inline-block;
+    }
+}
+.red-win {
+    background-color: rgb(255, 130, 130);
+}
+.blue-win {
+    background-color: rgb(92, 92, 255);
+}
+h1.win {
+    text-align: center;
+}

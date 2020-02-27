@@ -1,0 +1,36 @@
+.game {
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+
+    table {
+        display: flex;
+        flex-direction: column-reverse;
+        border-spacing: 0px;
+        margin: 5px auto;
+        transform: skew(-40deg, 0deg);
+        border: 1px solid black;
+        .row {
+
+            td {
+                width: 45px;
+                height: 20px;
+                border: 1px solid black;
+                cursor: pointer;
+            }
+            td:hover {
+                background-color: rgb(184, 255, 177);
+            }
+            .field.not-empty:hover {
+                background-color: white;
+            }
+            .field.not-empty.won:hover {
+                background-color: rgb(112, 219, 255);
+            }
+        }
+    }
+}
+.won {
+    background-color: rgb(112, 219, 255);
+}

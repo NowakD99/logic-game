@@ -1,0 +1,22 @@
+<div class="game">
+    <table *ngFor='let zz of table; let z = index'>
+        <tr *ngFor='let yy of zz; let y = index' class="row">
+        <td *ngFor='let xx of yy; let x = index' [ngClass]="{'won': xx.isWonField, 'not-empty': !xx.isEmpty, 'empty': xx.isEmpty}" class="field {{xx.color}}" [attr.data-x]=x [attr.data-y]=y [attr.data-z]=z [attr.data-color]=xx.color (click)="addBall($event)">
+                <div class="circle-red circle"></div>
+                <div class="circle-blue circle"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="stats">
+    <span>Turn:  </span>
+    <div *ngIf="player1.isActive">{{player1.name}} <div class="circle-red circle-without-skew"></div></div>
+    <div *ngIf="player2.isActive">{{player2.name}} <div class="circle-blue circle-without-skew"></div></div>
+    <h2></h2>
+    <span>number of moves: </span> <div>{{numbers}}</div>
+</div>
+
+<button (click)="resetGame()">Reset</button>
+<button (click)="undo()">Cofnij</button>
+
+<h1 [ngClass]="{'red-win': winner.color == 'red','blue-win': winner.color == 'blue'}" class="win">{{winner.name}}</h1>
